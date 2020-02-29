@@ -1,0 +1,24 @@
+#
+what
+##
+
+Array is a collection of data with same type.
+##
+type
+Basically, array can be declared as any data type.
+#
+how
+##
+create
+To create an array, you need to use the syntax as below:
+##
+length
+Using sizeof(array)/sizeof(data type of array) 
+##
+use
+You can access individual element of the array 
+#
+why
+##
+use
+Improve efficiency when manipulating multiple data with same type.
