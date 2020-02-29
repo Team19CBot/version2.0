@@ -55,6 +55,7 @@ T_BST *cons_topic_from_file(){
         return head;
 }
 
+/*
 // input question, matching with database
 // output corresponding answer to specifed file
 // 前端匹配问题时，需要调用的函数
@@ -162,14 +163,14 @@ void match1(string que, T_BST *head, fstream &outfile){
                 // write answer to targeted file...
                 outfile<< answer << endl;
         }
-}
+}*/
 
 // input question, matching with database
 // output corresponding answer to specifed file
 // 前端匹配问题时，需要调用的函数
 // 第一个参数是 问题字符串， 字符串可以包含符号和大小写，但每个字符要用空格隔开
 // 第二个参数是类型为 T_BST 的指针
-string match2(string que, T_BST *head){
+string match(string que, T_BST *head){
         
         // remove punctuation
         que.erase(remove_if (que.begin(), que.end(), static_cast<int(*)(int)>(&ispunct)),que.end());

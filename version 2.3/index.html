@@ -82,7 +82,7 @@
                                     layer.style.marginTop="-40px";
                                     layer.style.textAlign="center";          
                                     layer.style.lineHeight="80px";       
-                                    setTimeout("document.body.removeChild(layer)",2500);
+                                    setTimeout("document.body.removeChild(layer)",250);
                                 }
                                 else{
                                         //post
@@ -197,7 +197,7 @@
                                         answer.style.borderStyle="outset";
                                         answer.style.borderColor="#FFFAFA";
                                        // ts.close();
-                                           },10000);
+                                           },1000);
             
             
                                     
@@ -233,7 +233,7 @@
                                         newBox.appendChild(newAns); 
                                         newBox.appendChild(newAns); 
                                         newBox.scrollTop=newBox.scrollHeight;
-                                           },10000);               
+                                           },1000);
                                     }
                             } 
                         }
@@ -245,7 +245,7 @@
                         today = new Date();         
                         timeString = today.toLocaleString();         
                         document.getElementById("date").innerHTML = timeString;         
-                        setTimeout("change()", 100);      
+                        setTimeout("change()", 10);      
                     }
             
             
