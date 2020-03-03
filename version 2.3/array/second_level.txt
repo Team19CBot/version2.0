@@ -1,4 +1,0 @@
-type
-create declare
-length size
-use access
