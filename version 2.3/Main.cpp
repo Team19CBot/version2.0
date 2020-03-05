@@ -26,7 +26,7 @@ int main(){
         char *req_method = getenv("REQUEST_METHOD");
         char *cgi_str = getcgidata(stdin, req_method);
         string question = cgi_str;
-        string answer = match2(question, head);
+        string answer = match(question, head);
         
         fprintf(stdout,"%s",answer.c_str());
         
