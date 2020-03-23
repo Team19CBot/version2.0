@@ -5,6 +5,7 @@
             <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
             <bookmark href="/favicon.ico"/>
             <link rel="stylesheet" href="/maintain.css">
+            <script type="text/javascript" src="/checkCookieA.php"></script> 
       </head>
       <body>
             <script>
@@ -32,25 +33,31 @@
                         <li id="second">
                             <a href="http://localhost/maintain.html" rel="noopener noreferrer">Manage Questions</a>  
                             <ul>
+                                <!-- <li>
+                                    <a href="http://localhost/allQuestions.html" rel="noopener noreferrer">All Questions</a>  
+                                </li> -->
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Add Questions</a>  
+                                    <a href="http://localhost/queryQuestions.html" rel="noopener noreferrer">Query Quesions</a>  
                                 </li>
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Check For Answers</a>  
+                                    <a href="http://localhost/addQuestions.html" rel="noopener noreferrer">Add Questions</a>  
                                 </li>
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Modify Questions</a>  
+                                    <a href="http://localhost/deleteQuestions.html" rel="noopener noreferrer">Delete Questions</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/modifyQuestions.html" rel="noopener noreferrer">Modify Questions</a>  
                                 </li>
                             </ul> 
                         </li>
                         <li>
-                            <a href="http://localhost/maintain.html" rel="noopener noreferrer">Check Answers</a>   
+                            <a href="http://localhost/addKeywords.html" rel="noopener noreferrer">Add Synonymous keyword</a>  
                         </li>
                         <li id="second">
                             <a href="http://localhost/maintain.html" rel="noopener noreferrer">Teachers' Accounts</a>
                             <ul>
                                 <li>
-                                    <a href="http://localhost/addAccount.php" rel="noopener noreferrer">Add New Accounts</a>  
+                                    <a href="http://localhost/addAccount.html" rel="noopener noreferrer">Add New Accounts</a>  
                                 </li>
                                 <li>
                                     <a href="http://localhost/manageAccount.php" rel="noopener noreferrer">Manage Existing Accounts</a>  

@@ -5,7 +5,8 @@
             <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
             <bookmark href="/favicon.ico"/>
             <link rel="stylesheet" href="/maintain.css">
-      </head>
+            <script type="text/javascript" src="/checkCookieA.php"></script> 
+        </head>
       <body>
             <div class = "navigation_bar">
                 <a href="cbot" rel="noopener noreferrer">CBot</a>
@@ -17,26 +18,32 @@
             </div>
             <div class="layer">
                 <div class="leftP">
-                    <ul>
+                <ul>
                         <li>
                             <a href="http://localhost/maintain.html" rel="noopener noreferrer">Dashboard</a>   
                         </li>
                         <li id="second">
                             <a href="http://localhost/maintain.html" rel="noopener noreferrer">Manage Questions</a>  
                             <ul>
+                                <!-- <li>
+                                    <a href="http://localhost/allQuestions.html" rel="noopener noreferrer">All Questions</a>  
+                                </li> -->
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Add Questions</a>  
+                                    <a href="http://localhost/queryQuestions.html" rel="noopener noreferrer">Query Quesions</a>  
                                 </li>
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Check For Answers</a>  
+                                    <a href="http://localhost/addQuestions.html" rel="noopener noreferrer">Add Questions</a>  
                                 </li>
                                 <li>
-                                    <a href="http://localhost/maintain.html" rel="noopener noreferrer">Modify Questions</a>  
+                                    <a href="http://localhost/deleteQuestions.html" rel="noopener noreferrer">Delete Questions</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/modifyQuestions.html" rel="noopener noreferrer">Modify Questions</a>  
                                 </li>
                             </ul> 
                         </li>
                         <li>
-                            <a href="http://localhost/maintain.html" rel="noopener noreferrer">Check Answers</a>   
+                            <a href="http://localhost/addQuestions.html" rel="noopener noreferrer">Add Synonymous keywords</a>  
                         </li>
                         <li id="second">
                             <a href="http://localhost/maintain.html" rel="noopener noreferrer">Teachers' Accounts</a>

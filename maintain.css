@@ -46,7 +46,57 @@ html{
     vertical-align: middle;
 }
 
-.navigation_bar button{
+#userInfo{
+    position: absolute; 
+    display:none; 
+    cursor: grab;
+    width: 15%;
+    height: 30%;
+    background-color: rgba(200, 200, 169, 0.801); 
+    margin-left: 80%; 
+    margin-top: 0%;
+    /* margin-top: 60px; */
+}
+
+#userInfo a{
+    text-decoration: dotted;
+    color:rgb(50, 128, 117);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#userInfo button{
+    border: none;
+    outline: none;
+    color:rgb(50, 128, 117);
+    background-color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#row:hover{
+    color: aliceblue;
+    background-color: rgb(128, 145, 142);
+}
+
+#userInfo button:hover{
+    border: none;
+    outline: none;
+    color:aliceblue;
+    background-color: rgb(50, 128, 117);
+}
+
+#row {
+    width:100%;
+    margin-left:0;
+    position: relative;
+    /* padding-top: 5%; */
+    padding-bottom: 5%;
+    /* margin-top: -10%; */
+    margin-bottom: 40%;
+    color: #fff;
+    background-color: aliceblue;
+}
+
+#search{
     position: relative;
     top: 18.5%;
     height: 65%;
@@ -59,18 +109,35 @@ html{
     vertical-align: middle;
 }
 
+#dropdown{
+    /* display: inline; */
+    background-image: url(/image/drop.jpg);
+    margin-top: -30%;
+    /* padding-top:2.2%; */
+    width: 1.5%;
+    height: 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .navigation_bar div{
-    position: relative;
-    text-align: center;
-    font-family: Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
-    font-size: 15px;
-    top: 18.5%;
-    margin-left: 0%;
-    height: 55%;
-    width: 5%;
-    text-align: left;
-    line-height: 32px;
-    vertical-align: middle;
+    display: inline;
+    /* background-color: aliceblue;
+    color: aliceblue; */
+    margin-left: 88%;
+    padding-top: 3%; 
+    line-height: 100%; 
+}
+
+.navigation_bar label{
+    /* background-color: aliceblue; */
+    /* background-color: black; */
+    color: #fff;
+    margin-top: 20%;
+    /* line-height: 0; */
+    vertical-align: top;
+    font-style: italic;
+    font-size: larger;
 }
 
 .navigation_bar a:link{
@@ -137,6 +204,7 @@ html{
 
 .leftP ul li:hover ul{
     display: block;
+    height: 70%;
 }
 
 .rightP {
@@ -172,6 +240,41 @@ html{
     border-radius: 5px 5px 0 0;
 }
 
+.rightP div select{
+    /* display: inline; */
+    margin-left: 5%;
+    /* padding-top: 50%; */
+    /* //width:30%; */
+    font-size: 0.5cm;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-color: cadetblue; */
+    border-radius: 5px 5px 0 0;
+}
+
+.rightP div label{
+    /* display: inline; */
+    margin-left: 5%;
+    padding-top: 50%;
+    /* //width:30%; */
+    font-size: 0.5cm;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-color: cadetblue; */
+    border-radius: 5px 5px 0 0;
+}
+
+.rightP div textarea{
+    /* display: inline; */
+    margin-left: 5%;
+    width: 30%;
+    font-size: 0.5cm;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-color: cadetblue; */
+    border-radius: 5px 5px 0 0;
+}
+
 .rightP div table{
     margin-left: 40px;
     margin-top: 20px;
@@ -192,6 +295,30 @@ html{
     position: relative;
     margin-top: 7%;
     margin-left: 40.5%;
+    width: 200px;
+    height: 50px;
+    font-size: 0.7cm;
+    color: rgba(221, 204, 204, 0.884);
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(50, 128, 117);
+}
+
+#addQ{
+    position: relative;
+    margin-top: 0%;
+    margin-left: 65%;
+    width: 200px;
+    height: 50px;
+    font-size: 0.7cm;
+    color: rgba(221, 204, 204, 0.884);
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(50, 128, 117);
+}
+
+#queryQ{
+    position: relative;
+    margin-top: 0%;
+    margin-left: 65%;
     width: 200px;
     height: 50px;
     font-size: 0.7cm;

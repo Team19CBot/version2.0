@@ -54,7 +54,8 @@ html{
     /*实现块元素百分比下居中*/
     width:450px;
     padding:50px;
-    background: #2f405600;
+    /* background: #2f405600;; */
+    background-color: rgba(35, 110, 85, 0.788);
     box-sizing:border-box;
     box-shadow: 0px 15px 25px rgba(235, 222, 222, 0.5);
     border-radius:15px;
@@ -72,7 +73,7 @@ html{
     width: 100%;
     padding:10px 0;
     font-size:16px;
-    color: #fff;
+    color: rgba(202, 214, 25, 0.925);
     letter-spacing: 1px;
     margin-bottom: 30px;
     border:none;
@@ -105,7 +106,7 @@ html{
     outline:none;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    color:#fff;
+    color: rgba(255, 255, 255, 0.7);
     background: #03a9f4;
     padding:15px 20px;
     cursor: pointer;

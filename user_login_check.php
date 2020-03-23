@@ -1,8 +1,17 @@
 <?php
-function checkLoggedIn()
+function checkLoggedInT()
 {
 	if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
-		return userInDB($_COOKIE["username"], $_COOKIE["password"]);
+		return userInDB_T($_COOKIE["username"], $_COOKIE["password"]);
+	} else {
+		return false;
+	}
+}
+
+function checkLoggedInA()
+{
+	if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
+		return userInDB_Ad($_COOKIE["username"], $_COOKIE["password"]);
 	} else {
 		return false;
 	}

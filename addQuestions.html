@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+      <head>
+            <meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+            <title>CBot-maintain</title>
+            <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+            <bookmark href="/favicon.ico"/>
+            <link rel="stylesheet" href="/maintain.css">
+            <script type="text/javascript"src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script type="text/javascript" src="/checkCookieTA.php"></script> 
+      </head>
+      <body>
+            <div class = "navigation_bar">
+                <a href="cbot" rel="noopener noreferrer">CBot</a>
+                <a href="http://localhost/update.html" rel="noopener noreferrer">UPDATE</a>
+                <a href="http://localhost/maintain.html" rel="noopener noreferrer">MAINTAIN</a>
+                <textarea name=search placeholder="Search for datebase or users information"></textarea>
+                <button name="search"></button>
+                <!-- <div>Admin</div> -->
+            </div>
+            <div class="layer">
+                <div class="leftP">
+                    <ul>
+                        <li>
+                            <a href="http://localhost/maintain.html" rel="noopener noreferrer">Dashboard</a>   
+                        </li>
+                        <li id="second">
+                            <a href="http://localhost/maintain.html" rel="noopener noreferrer">Manage Questions</a>  
+                            <ul>
+                                <!-- <li>
+                                    <a href="http://localhost/allQuestions.html" rel="noopener noreferrer">All Questions</a>  
+                                </li> -->
+                                <li>
+                                    <a href="http://localhost/queryQuestions.html" rel="noopener noreferrer">Query Quesions</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/addQuestions.html" rel="noopener noreferrer">Add Questions</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/deleteQuestions.html" rel="noopener noreferrer">Delete Questions</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/modifyQuestions.html" rel="noopener noreferrer">Modify Questions</a>  
+                                </li>
+                            </ul> 
+                        </li>
+                        <li>
+                            <a href="http://localhost/addKeywords.html" rel="noopener noreferrer">Add Synonymous keyword</a>  
+                        </li>
+                        <li id="second">
+                            <a href="http://localhost/maintain.html" rel="noopener noreferrer">Teachers' Accounts</a>
+                            <ul>
+                                <li>
+                                    <a href="http://localhost/addAccount.html" rel="noopener noreferrer">Add New Accounts</a>  
+                                </li>
+                                <li>
+                                    <a href="http://localhost/manageAccount.php" rel="noopener noreferrer">Manage Existing Accounts</a>  
+                                </li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </div>
+                <div class="rightP">
+                    <div>    
+                        <header1>Add Questions</header1>
+                        <br><br><br>
+                        <!-- <form> -->
+                            <label>Topic:</label>
+                            <select id="topic">
+                                <option value="array">array</option>
+                                <option value="pointer">pointer</option>
+                            </select>
+                            <br><br><br>
+                            <label>Keywords:</label><br><br>
+                            <textarea maxlength="30" id="keywordF" onKeyUp="value=value.replace(/[^a-zA-Z]/g,'')" placeholder="Please enter a keyword of new question" onkeydown="if(event.keyCode==13)return false;"></textarea>
+                            <textarea maxlength="30" id="keywordS" onKeyUp="value=value.replace(/[^a-zA-Z]/g,'')" placeholder="Please enter another keyword of new question (can be empty)" onkeydown="if(event.keyCode==13)return false;"></textarea>
+                            <br><br><br>
+                            <label>The Answer:</label>
+                            <label id="label" style="display: none; margin-left: 30%;">New Answer:</label>
+                            <label id="addAnswer" style="display: none; margin-left: 30%;">Add answer:</label>
+                            <br><br>
+                            <div id="answer" style="background-color: aliceblue; width:35%; float: left; word-break: break-all;"></div>
+                            <textarea id="newA" type="text" name="newA" required="" style="display:none; height: 180px;" ></textarea>
+                            <br><br>
+                            <input type="submit" onclick="GotoBackE('Please fill the form')" id="queryQ" name="" value="Query">
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+            <script type = "text/javaScript">   
+               
+                //get the url of this page
+                urlinfo = window.location.href;
+                if(urlinfo != "http://localhost/addQuestions.html"){
+                    //this page is jumped form modify page
+                    var strs=new Array();
+                    strs = urlinfo.split("?");//? will change to this ","
+                    var ques = strs[1];
+                    var words = new Array();
+                    words = ques.split("&");
+                    var word = words[0];
+                    var topicForm = word.substring(6,word.length);
+                    // alert(topicForm);
+                    var word2 = words[1];
+                    var keywordFForm = word2.substring(9,word2.length);
+                    // alert(keywordFForm);
+                    var word3 = words[2];
+                    var keywordSForm = word3.substring(9,word3.length);
+                    // alert(keywordSForm);
+                    topic.value=topicForm;
+                    keywordF.innerHTML=keywordFForm;
+                    keywordS.innerHTML=keywordSForm;
+                }  
+           
+                function GotoBackE(date){ 
+
+                    // var value = $('#keywordF').val();
+                    var finalAnswer="";
+                    var topic=document.getElementById("topic").value.replace(/\ +/g,"").replace(/[\r\n]/g,"");
+                    var keywordF=document.getElementById("keywordF").value.replace(/\ +/g,"").replace(/[\r\n]/g,"");
+                    var keywordS=document.getElementById("keywordS").value.replace(/\ +/g,"").replace(/[\r\n]/g,"");
+                    var bt=document.createElement("input"); 
+                    var add=document.createElement("input");
+
+                    if(topic.length==0){
+                        alert(error);
+                        return;
+                    }       
+                    if(keywordF.length==0 && keywordS.length==0){
+                        alert("Please give at least one keyword");
+                        return;
+                    }
+                    if(keywordF==keywordS){
+                        alert("Please offer two different keywords");
+                        return;
+                    }
+
+                    //create string sending to back_end
+                    var TotalQ_A="";
+                    TotalQ_A=topic+"#"+keywordF+"#"+keywordS+"#";
+                    alert(TotalQ_A);
+
+                    bt.id="butt";
+                    bt.type="button";  
+                    bt.value="Modify";   
+
+                    add.type="button";
+                    add.value="Add";
+
+                    var style={       
+                        fontSize: "0.5cm",  
+                        fontFamily: "Georgia",     
+                        color: 'rgba(221, 204, 204, 0.884)',     
+                        background: "rgb(50, 128, 117)",
+                        position:"absolute",            
+                        width:"200px",           
+                        height:"50px",          
+                        left:"45%",           
+                        top:"50%",           
+                        marginLeft:"350px",           
+                        marginTop:"300px",     
+                    };
+                    for(var i in style)           
+                        bt.style[i]=style[i];
+                    for(var i in style)           
+                        add.style[i]=style[i];
+                    if(document.getElementById("layer")==null){             
+                        if(topic.length==0)
+                        {
+                            document.body.appendChild(layer);                    
+                            layer.innerHTML=date;     
+                            layer.style.textAlign="center";           
+                            layer.style.lineHeight="80px";       
+                            setTimeout("document.body.removeChild(layer)",2500);
+                        }
+                        else{
+                            $.ajax({
+                                type: 'POST',
+                                url: '../cgi-bin/query.cgi',
+                                data: TotalQ_A,
+                                dataType: "text",
+                                ContentType: "Content-type: text/html ",
+                                success: function (returnedData,status) {
+                                    if(status=="success"){
+                                        finalAnswer=returnedData;
+                                        alert(finalAnswer);
+                                        if(finalAnswer!="No answer"){
+                                            //modify answer
+                                            alert("The question has already existed, the page will jump to\"modify question\" page after 2 seconds")
+                                            window.location.href='modifyQuestions.html?topic='+topic+"&keywordF="+keywordF+"&keywordS="+keywordS;
+                                        }
+                                        else{
+                                            //no answer situation
+                                            answer.innerHTML="No answer for this question";
+                                            document.getElementById("newA").style.display="inline";
+                                            document.getElementById("queryQ").style.display="none";
+                                            document.getElementById("addAnswer").style.display="inline";
+                                            newA.placeholder="Please add an answer for this question";
+                                            document.body.appendChild(add);
+                                        }
+                                    }
+                                },
+                                error: function (e) {
+                                    alert("there is something wrong");
+                                    alert(e.responseText);
+                                }
+                            });
+                            answer.innerHTML=finalAnswer;
+                            bt.onclick=function(){
+                                // alert("1");
+                                var newAnswer=document.getElementById("newA").value;
+                                var newAnswerCheck=document.getElementById("newA").value.replace(/\ +/g,"").replace(/[\r\n]/g,"");
+                                if(newAnswerCheck.length==0){
+                                    alert("please enter your answer")
+                                }
+                                else{
+                                    var change="";
+                                    change = topic+"#"+keywordF+"#"+keywordS+"#"+newAnswer;
+                                    $.ajax({
+                                    type: 'POST',
+                                    url: '../cgi-bin/cgi_correct.cgi',
+                                    data: change,
+                                    dataType: "text",
+                                    ContentType: "Content-type: text/html",
+                                    success: function (returnedData,status) {
+                                        if(status=="success"){
+                                            finalAnswer=returnedData;
+                                            alert(finalAnswer);
+                                            answer.innerHTML=finalAnswer;
+                                            document.body.appendChild(bt); 
+                                            document.getElementById("newA").style.display="inline";
+                                            document.getElementById("queryQ").style.display="none";
+                                            document.getElementById("label").style.display="inline";
+                                            newA.placeholder="Please enter new answer for this question";
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("there is something wrong");
+                                    }
+                                   });
+                                } 
+                            }
+                            add.onclick=function(){
+                                var Answer=document.getElementById("newA").value;
+                                var AnswerCheck=document.getElementById("newA").value.replace(/\ +/g,"").replace(/[\r\n]/g,"");
+                                if(AnswerCheck.length==0){
+                                    alert("please enter your answer")
+                                }
+                                else{
+                                    var change="";
+                                    change = topic+"#"+keywordF+"#"+keywordS+"#"+Answer;
+                                    $.ajax({
+                                    type: 'POST',
+                                    url: '../cgi-bin/cgi_correct.cgi',
+                                    data: change,
+                                    dataType: "text",
+                                    ContentType: "Content-type: text/html",
+                                    success: function (returnedData,status) {
+                                        if(status=="success"){
+                                            finalAnswer=returnedData;
+                                            alert(finalAnswer);
+                                            answer.innerHTML=finalAnswer;
+                                            answer.innerHTML="No answer";
+                                            document.getElementById("newA").style.display="inline";
+                                            document.getElementById("queryQ").style.display="none";
+                                            document.getElementById("addAnswer").style.display="inline";
+                                            newA.placeholder="Please add an answer for this question";
+                                            document.body.appendChild(add);
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("there is something wrong");
+                                    }
+                                   });
+                                } 
+                            }
+
+                        }
+                    }   
+                }
+            </script>
+      </body>
+</html>

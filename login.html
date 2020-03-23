@@ -9,18 +9,18 @@
       <body background="/background.jpg" style="background-repeat:no-repeat;background-size:100% 100%;">
             <div class = "navigation_bar">
                   <a href="cbot" rel="noopener noreferrer">CBot</a>
-                  <a href="http://localhost/login.html" rel="noopener noreferrer">UPDATE</a>
-                  <a href="http://localhost/login.html" rel="noopener noreferrer">MAINTAIN</a>
+                  <a href="http://localhost/update.html" rel="noopener noreferrer">UPDATE</a>
+                  <a href="http://localhost/maintain.html" rel="noopener noreferrer">MAINTAIN</a>
             </div>
             <div class="box">
                   <h2>Login</h2>
                   <form action="http://localhost/login.php" method="post">
                         <div class="inputbox">
-                              <input type="text" name="username" required="">
+                              <input type="text" name="username" required="" maxlength="20">
                               <label>Username</label>
                         </div>
                         <div class="inputbox">
-                              <input type="password" name="password" required="">
+                              <input type="password" name="password" required="" maxlength="20"><br>
                               <label>Password</label>
                         </div>
                         <input type="submit" name="" value="submit">
@@ -28,9 +28,3 @@
             </div>
       </body>
 </html>
-   
-   <!--  "<div style=\"position:absolute;margin-left:40%;margin-top:35%;\">you are a member of our system!</div>\n";
-   //        "</body>\n";
-   //       <html>\n";
-   // <div style=\"position:a bsolute;margin-left:40%;margin-top:35%;\">username or password is wrong</div>\n";
-   -->
